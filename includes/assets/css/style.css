@@ -1,0 +1,41 @@
+body{
+    background:#f5f7fa;
+    font-family:Arial, sans-serif;
+}
+
+.navbar-brand{
+    font-size:24px;
+}
+
+.hero{
+    background:#198754;
+    color:white;
+    padding:70px 0;
+    text-align:center;
+}
+
+.card{
+    border:none;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.product-img{
+    height:220px;
+    object-fit:cover;
+}
+
+.btn-success{
+    width:100%;
+}
+
+.footer{
+    margin-top:50px;
+}
+
+.badge{
+    margin-left:5px;
+}
