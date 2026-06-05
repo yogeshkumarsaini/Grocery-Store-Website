@@ -1,17 +1,24 @@
 <?php
+
+include 'config/db.php';
 include 'includes/header.php';
 include 'includes/navbar.php';
+
+$products = mysqli_query($conn,
+"SELECT * FROM products ORDER BY id DESC LIMIT 8");
+
 ?>
 
 <section class="hero">
 
-<div class="container">
+<div class="container text-center">
 
 <h1>Fresh Grocery Delivered To Your Door</h1>
 
-<p>Best Fruits, Vegetables & Daily Essentials</p>
+<p>Healthy Food & Daily Essentials</p>
 
-<a href="products.php" class="btn btn-light">
+<a href="products.php"
+class="btn btn-light">
 Shop Now
 </a>
 
@@ -21,33 +28,49 @@ Shop Now
 
 <div class="container mt-5">
 
+<h2 class="mb-4">
+Featured Products
+</h2>
+
 <div class="row">
 
-<div class="col-md-4">
-<div class="card shadow p-4">
-<h4>Fresh Products</h4>
-<p>100% Fresh Grocery Items</p>
-</div>
+<?php while($row=mysqli_fetch_assoc($products)){ ?>
+
+<div class="col-md-3 mb-4">
+
+<div class="card shadow">
+
+<img
+src="assets/images/<?php echo $row['image']; ?>"
+class="card-img-top product-img">
+
+<div class="card-body">
+
+<h5>
+<?php echo $row['product_name']; ?>
+</h5>
+
+<p class="text-success fw-bold">
+₹ <?php echo $row['price']; ?>
+</p>
+
+<a href="product-details.php?id=<?php echo $row['id']; ?>"
+class="btn btn-primary">
+
+View Product
+
+</a>
+
 </div>
 
-<div class="col-md-4">
-<div class="card shadow p-4">
-<h4>Fast Delivery</h4>
-<p>Delivery Within 24 Hours</p>
-</div>
 </div>
 
-<div class="col-md-4">
-<div class="card shadow p-4">
-<h4>Best Prices</h4>
-<p>Affordable Daily Essentials</p>
 </div>
-</div>
+
+<?php } ?>
 
 </div>
 
 </div>
 
-<?php
-include 'includes/footer.php';
-?>
+<?php include 'includes/footer.php'; ?>

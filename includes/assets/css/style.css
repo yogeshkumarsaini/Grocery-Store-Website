@@ -39,3 +39,21 @@ body{
 .badge{
     margin-left:5px;
 }
+
+.product-img{
+    height:220px;
+    object-fit:cover;
+}
+
+.card{
+    border:none;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    transition:0.3s;
+}
+
+.btn{
+    border-radius:8px;
+}

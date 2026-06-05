@@ -59,3 +59,39 @@ VALUES(
 '$2y$10$6c8XK1Lv4Y4T9Y5YjM6T9uC7C4X1w6h2N8xS9xgqR0M5zY3lD7K6W',
 'admin'
 );
+
+INSERT INTO categories(category_name) VALUES
+('Fruits'),
+('Vegetables'),
+('Dairy'),
+('Bakery'),
+('Rice & Grains'),
+('Cooking Oil');
+
+INSERT INTO products
+(category_id,product_name,price,stock,image,description)
+VALUES
+
+(1,'Fresh Apple',120,50,'apple.jpg',
+'Fresh and juicy apples'),
+
+(1,'Banana',60,100,'banana.jpg',
+'Healthy bananas'),
+
+(2,'Potato',30,200,'potato.jpg',
+'Farm fresh potatoes'),
+
+(2,'Tomato',40,150,'tomato.jpg',
+'Organic tomatoes'),
+
+(3,'Milk 1L',65,100,'milk.jpg',
+'Fresh dairy milk'),
+
+(4,'Brown Bread',45,80,'bread.jpg',
+'Healthy brown bread'),
+
+(5,'Basmati Rice',120,60,'rice.jpg',
+'Premium quality rice'),
+
+(6,'Sunflower Oil',180,40,'oil.jpg',
+'Refined sunflower oil');
